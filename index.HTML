@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontolodon (KTL) Sender</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-4">
+
+  <h1 class="text-3xl font-bold mb-6">🚀 Kontolodon ($KTL) Sender</h1>
+
+  <div class="bg-gray-800 p-6 rounded-lg shadow-md max-w-md w-full">
+    <button id="connectButton" class="w-full bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded mb-4">Connect Wallet</button>
+    <div id="account" class="flex items-center justify-center text-sm mb-4 space-x-2"></div>
+
+
+    <form id="sendForm" class="flex flex-col space-y-3">
+      <input type="text" id="recipient" placeholder="Recipient address" required class="p-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+      <input type="number" id="amount" placeholder="Amount" required class="p-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+      <button type="submit" class="bg-green-600 hover:bg-green-700 py-2 px-4 rounded">Send Token</button>
+    </form>
+
+    <p id="status" class="mt-4 text-center text-sm"></p>
+
+    <p class="mt-4 text-xs text-gray-400 text-center">
+  ⚠️ To see your $KTL token in Metamask:<br>
+  Open Metamask → Assets → Import Tokens → Paste contract address: <br>
+  <span id="copyAddress" class="break-all text-gray-300 cursor-pointer hover:text-blue-400 underline">
+    0xa8d2d63da3fb95bd74b2c09750bf00e756f25763
+  </span>
+</p>
+<p id="copyStatus" class="text-center text-green-400 text-xs mt-1"></p>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
